@@ -1,23 +1,23 @@
 {% set name = "torchscan" %}
-{% set version = "0.1.2" %}
+{% set version = "0.2.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/torchscan-{{ version }}.tar.gz
-  sha256: acff638d5cfd639fa6838b2f61969f4206927ae9a41d6c358513c943bd2c4cfa
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/torchscan-{{ version }}.tar.gz
+  sha256: f71aa76fccf2379190af6b1524d27943d0b5a9b92c6881f451a1943091ba9b45
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
     - python {{ python_min }}
-    - setuptools
+    - uv-build
     - wheel
     - pip
   run:
