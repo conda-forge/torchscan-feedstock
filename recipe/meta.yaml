@@ -17,7 +17,7 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - setuptools
+    - uv-build
     - wheel
     - pip
   run:
